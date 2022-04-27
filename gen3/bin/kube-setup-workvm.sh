@@ -74,7 +74,7 @@ if sudo -n true > /dev/null 2>&1 && [[ $(uname -s) == "Linux" ]]; then
   # jinja2 needed by render_creds.py
   sudo -E XDG_CACHE_HOME=/var/cache python3 -m pip install jinja2
   # yq === jq for yaml
-  sudo -E XDG_CACHE_HOME=/var/cache python3 -m pip install yq
+  sudo -E XDG_CACHE_HOME=/var/cache python3 -m pip install yq --ignore-installed PyYAML
 
   # install nodejs
   if ! which node > /dev/null 2>&1; then
