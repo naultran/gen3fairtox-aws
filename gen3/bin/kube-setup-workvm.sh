@@ -122,12 +122,12 @@ if sudo -n true > /dev/null 2>&1 && [[ $(uname -s) == "Linux" ]]; then
   if [[ -f /usr/local/bin/kubectl && -f /usr/bin/kubectl ]]; then  # pref dpkg managed kubectl
     sudo -E /bin/rm /usr/local/bin/kubectl
   fi
-  if ! which gcloud > /dev/null 2>&1; then
-    (
-      sudo -E apt-get install -y google-cloud-sdk \
-          google-cloud-sdk-cbt
-    )
-  fi
+  #if ! which gcloud > /dev/null 2>&1; then
+  #  (
+  #    sudo -E apt-get install -y google-cloud-sdk \
+  #        google-cloud-sdk-cbt
+  #  )
+  #fi
 
   mkdir -p ~/.config
   sudo chown -R "${USER}:" ~/.config
@@ -338,6 +338,7 @@ fi
 (
   cd "$GEN3_HOME"
   if [[ -f ./package.json ]]; then
-    npm install || true
+  #  npm install || true
+    echo 'NPM'
   fi
 )
